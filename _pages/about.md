@@ -18,7 +18,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a <a href='https://www.lboro.ac.uk/departments/maths/staff/'>Research Associate at University of Loughborough</a> and <a href='https://eps.leeds.ac.uk/physics/staff/10206/dr-aydin-deger'>Visiting Research Fellow at University of Leeds</a>. My research interest are
+I am a Research Fellow in Quantum Computing Theory at University College London. My research interest are
+<!-- I am a <a href='https://www.lboro.ac.uk/departments/maths/staff/'>Research Associate at University of Loughborough</a> and <a href='https://eps.leeds.ac.uk/physics/staff/10206/dr-aydin-deger'>Visiting Research Fellow at University of Leeds</a>. My research interest are -->
+- Quantum computing theory and quantum simulations
 - Constrained dynamics and ergodicity breaking in classical and quantum systems
 - Gaussification and thermalisation in quantum systems
 - Entanglement entropy, area-law and black holes
