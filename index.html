@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aydin Deger - Postdoctoral Researcher at Oxford</title>
+    <title>Aydin Deger — Postdoctoral Research Associate (Oxford)</title>
+    <meta name="description" content="Aydin Deger — Research Associate in quantum systems at the University of Oxford. Publications, software, and contact details. Includes BlueTangle.jl, a noisy quantum circuit simulator in Julia with mid-circuit measurements, noise channels, error mitigation, VQE, stabilizer codes, and MPS support.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://deger.xyz/">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta property="og:site_name" content="deger.xyz">
+    <meta property="og:locale" content="en_GB">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aydin Deger — Quantum Computing Research">
+    <meta property="og:description" content="Publications and software from Aydin Deger (Oxford). Featuring BlueTangle.jl — a noisy quantum circuit simulator in Julia for NISQ-era research.">
+    <meta property="og:url" content="https://deger.xyz/">
+    <meta property="og:image" content="https://deger.xyz/images/profile.jpeg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aydin Deger — Quantum Computing Research">
+    <meta name="twitter:description" content="Publications and BlueTangle.jl — a Julia toolkit for noisy quantum circuits with mid-circuit measurements, noise channels, error mitigation, VQE, stabilizer codes, and MPS support.">
+    <meta name="twitter:image" content="https://deger.xyz/images/profile.jpeg">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,22 +95,96 @@
         a:hover {
             text-decoration: underline;
         }
+        header {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        .profile {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #eee;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 700px) {
+            header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            header .profile {
+                margin: 0 auto;
+            }
+        }
+        .software-card {
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 16px;
+            background: #f9f9f9;
+            margin-top: 12px;
+        }
+        .software-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+        }
+        .software-card p {
+            margin: 0;
+        }
+        .software-card ul { list-style: disc; padding-left: 20px; margin-top: 8px; }
+        .software-card li { margin-bottom: 6px; }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "#person",
+          "name": "Aydin Deger",
+          "url": "https://deger.xyz/",
+          "affiliation": {"@type": "Organization", "name": "University of Oxford"},
+          "sameAs": [
+            "https://arxiv.org/a/deger_a_1.html",
+            "https://orcid.org/0000-0002-6351-4768",
+            "https://scholar.google.com/citations?user=nEI5nI0AAAAJ",
+            "https://www.researchgate.net/profile/Aydin-Deger/",
+            "https://github.com/aydindeger",
+            "https://twitter.com/aydindeger"
+          ]
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "BlueTangle.jl",
+          "url": "https://deger.xyz/BlueTangle.jl/",
+          "codeRepository": "https://github.com/aydindeger/BlueTangle.jl",
+          "programmingLanguage": "Julia",
+          "applicationCategory": "Quantum computing",
+          "author": {"@id": "#person"},
+          "description": "Noisy quantum circuit simulator for NISQ research: mid-circuit measurements, configurable noise channels, error mitigation (Pauli twirling, ZNE, measurement error mitigation), flexible state representations (state vector, density matrix, MPS via ITensor), trotterized Hamiltonians, VQE, stabilizer codes, and quantum‑information utilities."
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Aydin Deger</h1>
-        <p>I am a Postdoctoral Researcher <a href="https://www.physics.ox.ac.uk/our-people/deger" target="_blank">in the Theory of Quantum Systems group at the University of Oxford</a>. My research interests include:</p>
-        <ul>
-            <li>– Quantum computing and simulations</li>
-            <li>– Scrambling, thermalisation and Gaussification in quantum systems</li>
-            <li>– Constrained dynamics and ergodicity breaking in classical and quantum systems</li>
-            <li>– Entanglement entropy, area-law and black holes</li>
-            <li>– Rare fluctuations and large deviation statistics</li>
-            <li>– Lee-Yang theory and (non-)equilibrium phase transitions</li>
-        </ul>
+        <img src="images/profile.jpeg" alt="Portrait of Aydin Deger" class="profile">
+        <div>
+            <h1>Aydin Deger</h1>
+            <p>I am a Research Associate <a href="https://www.physics.ox.ac.uk/our-people/deger" target="_blank">in the Theory of Quantum Systems group at the University of Oxford</a>. My research interests include:</p>
+            <ul>
+                <li>– Quantum computing and simulations</li>
+                <li>– Scrambling, thermalisation and Gaussification in quantum systems</li>
+                <li>– Constrained dynamics and ergodicity breaking in classical and quantum systems</li>
+                <li>– Entanglement entropy, area-law and black holes</li>
+                <li>– Rare fluctuations and large deviation statistics</li>
+                <li>– Lee-Yang theory and (non-)equilibrium phase transitions</li>
+            </ul>
+        </div>
     </header>
 
     <div class="icons">
@@ -122,6 +217,25 @@
             <li>2019 | <a href="https://link.springer.com/article/10.1007/s11128-019-2439-7" target="_blank">A. Deger and T-C. Wei, "Geometric entanglement and quantum phase transition in generalized cluster-XY models", Quantum Inf. Process. 18, 326</a></li>
             <li>2018 | <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.012115" target="_blank">A. Deger, K. Brandner and C. Flindt, "Lee-Yang Zeros and large-deviation statistics of a molecular zipper", Phys. Rev. E 97, 012115 – (Editor’s Suggestion)</a></li>
         </ul>
+    </section>
+
+        <section class="software">
+        <h2>Software</h2>
+        <div class="software-card">
+            <h3><a href="https://deger.xyz/BlueTangle.jl/" target="_blank" rel="noopener">BlueTangle.jl</a></h3>
+            <p>A Noisy and Dynamic Quantum Circuit Simulator in Julia for NISQ-era research that I develop and maintain. Highlights include:</p>
+            <ul>
+                <li><strong>Mid‑circuit measurements</strong> for measurement-induced phenomena (e.g. entanglement phase transitions, quantum error correction).</li>
+                <li><strong>Configurable noise channels</strong> via Kraus operators.</li>
+                <li><strong>Error mitigation</strong> utilities: Pauli twirling, zero‑noise extrapolation, and measurement‑error mitigation.</li>
+                <li><strong>Multiple state representations</strong>: state vector, density matrix, and MPS (via ITensor) under the same high-level API.</li>
+                <li><strong>Trotterized Hamiltonians</strong> built from concise operator‑string inputs.</li>
+                <li><strong>Variational Quantum Eigensolver (VQE)</strong> with easy setup.</li>
+                <li><strong>Stabilizer codes</strong> support for quantum error correction.</li>
+                <li><strong>Quantum‑information toolkit</strong> (entanglement, partial traces, gaussianity, phase estimation, classical shadows, high‑order moments).</li>
+            </ul>
+            <p><a href="https://github.com/aydindeger/BlueTangle.jl" target="_blank" rel="noopener"><strong>GitHub repository</strong></a> · <a href="https://deger.xyz/BlueTangle.jl/" target="_blank" rel="noopener"><strong>Documentation</strong></a></p>
+        </div>
     </section>
 
     <footer>
