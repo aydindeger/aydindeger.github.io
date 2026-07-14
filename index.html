@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aydin Deger — Research Fellow (Oxford)</title>
-    <meta name="description" content="Aydin Deger — Research Fellow in quantum systems at the University of Oxford. Publications, software, and contact details. Includes BlueTangle.jl, a noisy quantum circuit simulator in Julia with mid-circuit measurements, noise channels, error mitigation, VQE, stabilizer codes, and MPS support.">
+    <title>Aydin Deger — Theoretical Physics and Quantum Computing</title>
+    <meta name="description" content="Aydin Deger is a theoretical physicist at Oxford working on quantum many-body physics, statistical mechanics, quantum computation, classical simulability, and quantum simulation.">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://deger.xyz/">
     <meta name="googlebot" content="index, follow">
@@ -16,22 +16,32 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Aydin Deger — Quantum Computing Research">
-    <meta property="og:description" content="Publications and software from Aydin Deger (Oxford). Featuring BlueTangle.jl — a noisy quantum circuit simulator in Julia for NISQ-era research.">
+    <meta property="og:description" content="Theoretical physics at the intersection of quantum many-body dynamics, statistical mechanics, and quantum computation.">
     <meta property="og:url" content="https://deger.xyz/">
     <meta property="og:image" content="https://deger.xyz/images/profile.jpeg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aydin Deger — Quantum Computing Research">
-    <meta name="twitter:description" content="Publications and BlueTangle.jl — a Julia toolkit for noisy quantum circuits with mid-circuit measurements, noise channels, error mitigation, VQE, stabilizer codes, and MPS support.">
+    <meta name="twitter:description" content="Theoretical physics at the intersection of quantum many-body dynamics, statistical mechanics, and quantum computation.">
     <meta name="twitter:image" content="https://deger.xyz/images/profile.jpeg">
     <style>
+        :root {
+            --ink: #1d3b57;
+            --ink-strong: #102a43;
+            --muted: #5f6f7f;
+            --accent: #254f73;
+            --accent-hover: #173a58;
+            --accent-soft: #eaf1f7;
+            --surface: #f7f9fc;
+            --border: #d7e0e8;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--ink);
         }
         .container {
             width: 80%;
@@ -40,15 +50,15 @@
         }
         h1 {
             font-size: 2.5em;
-            color: #222;
+            color: var(--ink-strong);
             margin-bottom: 10px;
         }
         h2 {
             font-size: 1.8em;
-            color: #333;
+            color: var(--ink-strong);
             margin-top: 40px;
             margin-bottom: 15px;
-            border-bottom: 2px solid #333;
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 5px;
         }
         ul {
@@ -71,7 +81,12 @@
         }
         .publication-list {
             margin-top: 20px;
-            padding-left: 0;
+            padding-left: 2.25rem;
+            list-style: decimal;
+        }
+        .publication-list li {
+            margin-bottom: 6px;
+            padding-left: 0.35rem;
         }
         .publication-item {
             margin-bottom: 10px;
@@ -85,14 +100,15 @@
             text-align: center;
             padding: 10px 0;
             font-size: 0.9em;
-            color: #777;
+            color: var(--muted);
             margin-top: 40px;
         }
         a {
-            color: #333;
+            color: var(--accent);
             text-decoration: none;
         }
         a:hover {
+            color: var(--accent-hover);
             text-decoration: underline;
         }
         header {
@@ -106,7 +122,7 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #eee;
+            border: 3px solid var(--accent-soft);
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
         @media (max-width: 700px) {
@@ -119,10 +135,10 @@
             }
         }
         .software-card {
-            border: 1px solid #e6e6e6;
+            border: 1px solid var(--border);
             border-radius: 8px;
             padding: 16px;
-            background: #f9f9f9;
+            background: var(--surface);
             margin-top: 12px;
         }
         .software-card h3 {
@@ -134,6 +150,181 @@
         }
         .software-card ul { list-style: disc; padding-left: 20px; margin-top: 8px; }
         .software-card li { margin-bottom: 6px; }
+        .tagline {
+            margin-top: 12px;
+            color: var(--muted);
+        }
+        .research {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            align-items: start;
+        }
+        .research > h2 {
+            grid-column: 1 / -1;
+            margin-bottom: 0;
+        }
+        .research-theme {
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            padding: 0;
+            background: var(--surface);
+            margin-top: 0;
+            overflow: hidden;
+            transition: box-shadow 160ms ease, border-color 160ms ease;
+        }
+        .research-theme[open] {
+            grid-column: 1 / -1;
+            border-color: #c7d5e1;
+            box-shadow: 0 8px 24px rgba(23, 40, 61, 0.08);
+        }
+        .research-theme-wide {
+            grid-column: 1 / -1;
+        }
+        .research-title {
+            display: block;
+            margin: 0;
+            font-size: 1.12em;
+            font-weight: 700;
+            color: var(--ink-strong);
+        }
+        .research-heading {
+            display: block;
+            flex: 1;
+            min-width: 0;
+        }
+        .research-teaser {
+            display: block;
+            margin: 6px 0 0;
+            color: var(--ink);
+            font-size: 0.92em;
+            font-weight: normal;
+            line-height: 1.45;
+        }
+        .research-theme summary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+        }
+        .research-theme summary::-webkit-details-marker {
+            display: none;
+        }
+        .research-theme summary::after {
+            content: "+";
+            flex: 0 0 28px;
+            width: 28px;
+            height: 28px;
+            margin-left: auto;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: normal;
+            line-height: 27px;
+            text-align: center;
+        }
+        .research-theme[open] summary {
+            background: var(--accent-soft);
+            border-bottom: 1px solid var(--border);
+        }
+        .research-theme[open] summary::after {
+            content: "\2212";
+        }
+        .research-theme summary:hover {
+            background: #eef4f8;
+        }
+        .research-theme summary:focus-visible {
+            outline: 3px solid rgba(37, 79, 115, 0.28);
+            outline-offset: -3px;
+        }
+        .research-theme > p,
+        .research-theme > ul,
+        .research-theme > figure:not(.compact) {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .research-theme > p:first-of-type {
+            margin-top: 16px;
+        }
+        .research-theme ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .research-theme li {
+            margin-bottom: 10px;
+        }
+        .research-fig {
+            margin: 14px 0 6px 0;
+            text-align: center;
+        }
+        .research-fig img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            background: #fff;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .research-fig figcaption {
+            font-size: 0.85em;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .research-theme::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .research-fig.compact {
+            float: right;
+            width: min(300px, 42%);
+            margin: 2px 20px 14px 22px;
+        }
+        .research-fig.compact img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+        }
+        @media (max-width: 700px) {
+            .research-title {
+                font-size: 1.02em;
+            }
+            .research-teaser {
+                font-size: 0.9em;
+            }
+            .research-theme summary {
+                gap: 10px;
+                padding: 14px 16px;
+            }
+            .research-theme summary::after {
+                flex-basis: 24px;
+                width: 24px;
+                height: 24px;
+                font-size: 1.1rem;
+                line-height: 23px;
+            }
+            .research-fig.compact {
+                float: none;
+                width: min(300px, 100%);
+                margin: 14px auto;
+            }
+        }
+        @media (max-width: 900px) {
+            .research {
+                grid-template-columns: 1fr;
+            }
+            .research > h2,
+            .research-theme-wide {
+                grid-column: auto;
+            }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -151,7 +342,7 @@
             "https://scholar.google.com/citations?user=nEI5nI0AAAAJ",
             "https://www.researchgate.net/profile/Aydin-Deger/",
             "https://github.com/aydindeger",
-            "https://twitter.com/aydindeger"
+            "https://www.linkedin.com/in/aydindeger/"
           ]
         },
         {
@@ -184,15 +375,14 @@
             <br> ・Research Fellow, Wolfson College, Oxford
         </p>
 
-        <p class="interests">Research interests:</p>
-        <ul>
-            <li>Quantum computing and simulations</li>
-            <li>Scrambling, thermalisation and Gaussification in quantum systems</li>
-            <li>Constrained dynamics and ergodicity breaking in classical and quantum systems</li>
-            <li>Entanglement entropy, area-law and black holes</li>
-            <li>Rare fluctuations and large deviation statistics</li>
-            <li>Lee–Yang theory and (non-)equilibrium phase transitions</li>
-        </ul>
+        <p class="tagline">
+            I am a theoretical physicist working in quantum many-body physics, statistical mechanics and quantum
+            computation. I study how interactions produce collective phenomena &mdash; phase transitions, rare
+            fluctuations, constrained dynamics and information scrambling &mdash; and what these phenomena imply for
+            quantum simulation and computation. A parallel line of my work asks where quantum computational complexity
+            comes from: which resources obstruct classical simulation, and how algorithms and
+            fault-tolerant protocols should be designed for real quantum processors.
+        </p>
     </div>
 </header>
 
@@ -205,17 +395,221 @@
         <a href="https://scholar.google.com/citations?user=nEI5nI0AAAAJ" target="_blank"><img src="icons/google-scholar.svg" alt="Google Scholar"></a>
         <a href="https://www.researchgate.net/profile/Aydin-Deger/" target="_blank"><img src="icons/researchgate.svg" alt="ResearchGate"></a>
         <a href="https://github.com/aydindeger" target="_blank"><img src="icons/github.svg" alt="GitHub"></a>
-        <a href="https://twitter.com/aydindeger" target="_blank"><img src="icons/twitter.png" alt="Twitter"></a>
+        <a href="https://www.linkedin.com/in/aydindeger/" target="_blank" rel="noopener"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
     </div>
+
+    <section class="research" id="research">
+        <h2>Research</h2>
+
+        <details class="research-theme">
+            <summary>
+                <span class="research-heading">
+                    <span class="research-title" role="heading" aria-level="3">1. Criticality and Fluctuations</span>
+                    <span class="research-teaser">
+                        How can the phase structure of a many-body system be inferred from finite data? I develop
+                        methods based on Lee&ndash;Yang zeros, high-order cumulants and interaction geometry to extract
+                        critical points, universal behaviour and rare fluctuations from finite classical and quantum
+                        systems.
+                    </span>
+                </span>
+            </summary>
+            <p><strong>Selected contributions</strong></p>
+            <ul>
+                <li>
+                    <strong>Lee&ndash;Yang theory from fluctuations</strong> &mdash; I developed what is now known as
+                    <em>the cumulant method</em>, which extracts Lee&ndash;Yang zeros and critical behaviour from the
+                    high-order fluctuations of measurable observables. I established the method in
+                    <a href="https://doi.org/10.1103/PhysRevE.97.012115" target="_blank" rel="noopener">Phys. Rev. E 97, 012115 (2018)</a>
+                    (Editor's Suggestion) and extended it to determine <strong>universal critical exponents</strong>
+                    [<a href="https://doi.org/10.1103/PhysRevResearch.1.023004" target="_blank" rel="noopener">Phys. Rev. Research 1, 023004 (2019)</a>],
+                    rare fluctuations
+                    [<a href="https://doi.org/10.1103/PhysRevResearch.2.033009" target="_blank" rel="noopener">Phys. Rev. Research 2, 033009 (2020)</a>]
+                    and large-deviation statistics of the Ising model
+                    [<a href="https://doi.org/10.1103/PhysRevB.102.174418" target="_blank" rel="noopener">Phys. Rev. B 102, 174418 (2020)</a>, Editor's Suggestion].
+                </li>
+                <li>
+                    <strong>Criticality in dynamics and open systems</strong> &mdash; I extended the
+                    cumulant framework to real-time dynamics, determining <strong>dynamical quantum phase
+                    transitions</strong> in strongly correlated systems
+                    [<a href="https://doi.org/10.1103/PhysRevX.11.041018" target="_blank" rel="noopener">Phys. Rev. X 11, 041018 (2021)</a>],
+                    and to driven open systems, locating a <strong>nonequilibrium phase transition in a single-electron
+                    micromaser</strong>
+                    [<a href="https://doi.org/10.1103/PhysRevB.105.155421" target="_blank" rel="noopener">Phys. Rev. B 105, 155421 (2022)</a>].
+                </li>
+                <li>
+                    <strong>Geometric entanglement</strong> &mdash; with Tzu-Chieh Wei, I established geometric
+                    entanglement as a probe of <strong>quantum phase transitions</strong> in generalized cluster-XY
+                    models
+                    [<a href="https://doi.org/10.1007/s11128-019-2439-7" target="_blank" rel="noopener">Quantum Inf. Process. 18, 326 (2019)</a>].
+                </li>
+                <li>
+                    <strong>Emergent interaction geometry</strong> &mdash; with the Daley group at Oxford, I showed
+                    that the geometry of sparse long-range interactions drives phase transitions in cold-atom spin
+                    models
+                    [<a href="https://arxiv.org/abs/2512.08709" target="_blank" rel="noopener">arXiv:2512.08709</a>]
+                    and governs their low-energy phase structure through a unified effective-geometry principle
+                    [<a href="https://arxiv.org/abs/2606.20387" target="_blank" rel="noopener">arXiv:2606.20387</a>].
+                </li>
+            </ul>
+            <figure class="research-fig">
+                <img src="images/research-geometry.png" alt="Effective geometry of a sparse long-range spin model changing with the interaction parameter" loading="lazy">
+                <figcaption>Emergent geometry of sparse long-range interactions, morphing as the coupling exponent varies (arXiv:2512.08709, arXiv:2606.20387).</figcaption>
+            </figure>
+        </details>
+
+        <details class="research-theme">
+            <summary>
+                <span class="research-heading">
+                    <span class="research-title" role="heading" aria-level="3">2. Non-Equilibrium Dynamics, Scrambling and Black Holes</span>
+                    <span class="research-teaser">
+                        What controls whether an interacting system thermalises, localises or scrambles information?
+                        I study constrained and driven dynamics, weak ergodicity breaking and curved-space lattice
+                        models, connecting nonequilibrium many-body physics with quantum information and black-hole
+                        dynamics.
+                    </span>
+                </span>
+            </summary>
+            <p><strong>Selected contributions</strong></p>
+            <ul>
+                <li>
+                    <strong>Constrained dynamics and ergodicity breaking</strong> &mdash; in two companion PRLs I showed
+                    that kinetic constraints can <strong>arrest many-body chaos</strong>
+                    [<a href="https://doi.org/10.1103/PhysRevLett.129.160601" target="_blank" rel="noopener">Phys. Rev. Lett. 129, 160601 (2022)</a>]
+                    and that deterministic constrained dynamics falls into <strong>directed percolation
+                    universality</strong>
+                    [<a href="https://doi.org/10.1103/PhysRevLett.129.190601" target="_blank" rel="noopener">Phys. Rev. Lett. 129, 190601 (2022)</a>, Editor's Suggestion].
+                </li>
+                <li>
+                    <strong>Weak ergodicity breaking and localisation</strong> &mdash; I identified a <strong>weak ergodicity
+                    breaking transition</strong> in randomly constrained models
+                    [<a href="https://doi.org/10.1103/PhysRevB.109.L220301" target="_blank" rel="noopener">Phys. Rev. B 109, L220301 (2024)</a>]
+                    and established <strong>Stark many-body localisation under periodic driving</strong>
+                    [<a href="https://doi.org/10.1103/PhysRevB.110.134205" target="_blank" rel="noopener">Phys. Rev. B 110, 134205 (2024)</a>].
+                </li>
+                <li>
+                    <strong>Black-hole lattice simulation</strong> &mdash; I developed a many-body simulator for a
+                    <strong>three-dimensional black hole</strong> built
+                    from Dirac fermions, and used it to probe key features of the AdS/CFT correspondence in a lattice
+                    model where observables can be defined and measured
+                    [<a href="https://doi.org/10.1103/PhysRevB.108.155124" target="_blank" rel="noopener">Phys. Rev. B 108, 155124 (2023)</a>].
+                </li>
+                <li>
+                    <strong>Measuring Hawking temperature</strong> &mdash; with the Schneider group (Cambridge), I
+                    designed a Floquet-driven <strong>optical-lattice
+                    experiment to measure Hawking temperature</strong>, turning black-hole physics into a protocol
+                    realistic for current cold-atom platforms
+                    [<a href="https://arxiv.org/abs/2312.14058" target="_blank" rel="noopener">arXiv:2312.14058</a>].
+                </li>
+            </ul>
+            <figure class="research-fig">
+                <img src="images/research-black-hole-simulator.png" alt="Excitation density around an analogue black-hole horizon at early and late times" loading="lazy" style="max-width: 520px;">
+                <figcaption>Excitation dynamics around an analogue event horizon, shown at early and late times in the black-hole simulator. <a href="https://doi.org/10.1103/PhysRevB.108.155124" target="_blank" rel="noopener">Phys. Rev. B <strong>108</strong>, 155124 (2023)</a>.</figcaption>
+            </figure>
+        </details>
+
+        <details class="research-theme">
+            <summary>
+                <span class="research-heading">
+                    <span class="research-title" role="heading" aria-level="3">3. Quantum Resources and Classical Simulability</span>
+                    <span class="research-teaser">
+                        What makes a quantum process genuinely hard to simulate classically? I investigate the roles
+                        &mdash; and limitations &mdash; of entanglement, magic and non-Gaussianity, construct efficiently
+                        simulable circuits with apparently strong quantum resources, and develop diagnostics that
+                        distinguish interaction-generated complexity from hidden free structure.
+                    </span>
+                </span>
+            </summary>
+            <p><strong>Selected contributions</strong></p>
+            <ul>
+                <li>
+                    <strong>Persistent non-Gaussian correlations</strong> &mdash; I uncovered a mechanism by which
+                    strong interactions and kinetic constraints
+                    <strong>generate and protect non-Gaussian correlations</strong> in out-of-equilibrium Rydberg atom
+                    arrays, and introduced Wick-factorisation diagnostics that quantify this resource directly from
+                    experimental data
+                    [<a href="https://doi.org/10.1103/PRXQuantum.4.040339" target="_blank" rel="noopener">PRX Quantum 4, 040339 (2023)</a>].
+                </li>
+                <li>
+                    <strong>Emergent Gaussianity</strong> &mdash; with collaborators, I showed how Gaussianity emerges
+                    in the thermodynamic limit of interacting fermions, clarifying when an interacting system admits
+                    an effective free description
+                    [<a href="https://doi.org/10.1103/PhysRevB.104.L180408" target="_blank" rel="noopener">Phys. Rev. B 104, L180408 (2021)</a>].
+                </li>
+                <li>
+                    <strong>Code-compiled tensor networks</strong> &mdash; I led the development of a simulation method
+                    that uses symmetries of quantum error-correcting codes to map circuits with high entanglement,
+                    magic and non-Gaussianity into classically tractable tensor networks. This shows that magic alone
+                    is no guarantee of quantum advantage. The method also provides a practical benchmark for quantum
+                    hardware: a device executes a deep, nontrivial logical circuit while the efficiently simulated MPS
+                    supplies the classical reference needed to verify its output. These circuits can therefore test how
+                    faithfully NISQ and early fault-tolerant processors perform complex logical operations
+                    [<a href="https://arxiv.org/abs/2607.08396" target="_blank" rel="noopener">arXiv:2607.08396</a>].
+                </li>
+            </ul>
+            <figure class="research-fig">
+                <img src="images/research-codecompiled.png" alt="Code compilation turns nonlocal interacting logical circuits into single-qubit physical gates plus relabeling" loading="lazy">
+                <figcaption>Code compilation: nonlocal, interacting logical circuits become single-qubit physical gates plus wire relabelling &mdash; classically simulable despite high entanglement and magic (arXiv:2607.08396).</figcaption>
+            </figure>
+        </details>
+
+        <details class="research-theme">
+            <summary>
+                <span class="research-heading">
+                    <span class="research-title" role="heading" aria-level="3">4. Quantum Computers: Algorithms, Optimisation and Fault Tolerance</span>
+                    <span class="research-teaser">
+                        How should quantum algorithms be designed around the physics of the processor? I develop
+                        processor-aware methods for optimisation, simulation and state preparation, together with
+                        low-overhead schemes for logical computation. The central question is when native connectivity
+                        and analogue control provide a genuine computational advantage.
+                    </span>
+                </span>
+            </summary>
+            <figure class="research-fig compact">
+                <img src="images/research-rydberg-qudit.jpg" alt="A graph-coloring problem embedded in a Rydberg-qudit atom array and solved by quantum annealing" loading="lazy">
+                <figcaption>Graph colouring with Rydberg qudits: from a graph to an atom-array embedding and quantum-annealed solutions.</figcaption>
+            </figure>
+            <p><strong>Selected contributions</strong></p>
+            <ul>
+                <li>
+                    <strong>Rydberg-qudit optimisation</strong> &mdash; with collaborators at Durham and Strathclyde, I
+                    showed how Rydberg qudits solve graph-colouring problems through quantum optimisation
+                    [<a href="https://iopscience.iop.org/article/10.1088/2058-9565/ae3b6d" target="_blank" rel="noopener"><em>Quantum Sci. Technol.</em> <strong>11</strong>, 025012 (2026)</a>].
+                </li>
+                <li>
+                    <strong>Discovery mode on quantum processors</strong> <em>(in preparation)</em> &mdash; We
+                    developed an autonomous discovery framework that couples a superconducting quantum processor to a
+                    classical learning agent. Guided by quantum processor data, the agent explores circuit space and identifies
+                    structured many-body dynamics, including discrete time crystals and dual-unitary circuits
+                    (<a href="https://arxiv.org/abs/2507.01013" target="_blank" rel="noopener">arXiv:2507.01013</a>).
+                </li>
+                <li>
+                    <strong>Partially fault-tolerant logical computation</strong> <em>(in preparation)</em> &mdash; We are
+                    developing a framework for neutral atoms that replaces costly T-gate decompositions with direct analogue
+                    logical rotations on small-distance surface-code resource states and integrates pulse-level
+                    optimisation of the Rydberg gate to suppress the dominant undetectable logical error.
+                </li>
+                <li>
+                    <strong>Long-range connectivity for variational algorithms</strong> &mdash; with Helene Lösl and
+                    Andrew Daley, I identified when structured long-range connectivity is a genuine resource for variational quantum algorithms on reconfigurable neutral-atom and trapped-ion
+                    platforms
+                    [<a href="https://arxiv.org/abs/2607.07547" target="_blank" rel="noopener">arXiv:2607.07547</a>].
+                </li>
+            </ul>
+        </details>
+    </section>
 
     <section class="publications">
         <h2>Publications</h2>
+        <p class="publications-summary">20 publications | 11 lead-author | 2 PRL, 1 PRX, 1 PRX Quantum | 3 Editors' Suggestions</p>
         <ol class="publication-list">
+            <li>2026 | <a href="https://arxiv.org/abs/2607.08396" target="_blank">A. Deger, S. Koutsioumpas, M. Webster, H. Sayginel, J. Roffe and D. E. Browne, "Efficiently simulable quantum circuits with large entanglement, magic, and non-Gaussianity via code-compiled tensor networks", arXiv:2607.08396</a></li>
+            <li>2026 | <a href="https://arxiv.org/abs/2607.07547" target="_blank">H. M. Lösl, A. Deger and A. J. Daley, "Variational Learning with Sparse Long-range Entangling Gates", arXiv:2607.07547</a></li>
+            <li>2026 | <a href="https://arxiv.org/abs/2606.20387" target="_blank">A. Gunning, S. Schmid, Z. Liu, S. Kuriyattil, A. Deger and A. J. Daley, "Interaction geometry and ground-state properties of sparse quantum lattice models", arXiv:2606.20387</a></li>
+            <li>2026 | <a href="https://iopscience.iop.org/article/10.1088/2058-9565/ae3b6d" target="_blank">T. Angkhanawin, A. Deger, J. D. Pritchard and C. S. Adams, "Graph coloring via quantum optimization on a Rydberg-qudit atom array", Quantum Sci. Technol. 11, 025012</a></li>
             <li>2025 | <a href="https://arxiv.org/abs/2512.08709" target="_blank">A. Gunning, A. Deger, S. Kuriyattil and A. J. Daley, "Geometry-driven transitions in sparse long-range spin models with cold atoms", arXiv:2512.08709 (Under review in PRL)</a></li>
-            <li>2025 | <a href="https://arxiv.org/abs/2504.08598" target="_blank">T. Angkhanawin, A. Deger, J.D. Pritchard, C.S Adams, "Graph Coloring via Quantum Optimization on a Rydberg-Qudit Atom Array", arXiv:2504.08598 (Under review in PRX Quantum)</a></li>
             <li>2024 | <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.134205" target="_blank">C. Duffin, A. Deger, A. Lazarides, "Stark Many-Body Localisation Under Periodic Driving", Phys. Rev. B 110, 134205</a></li>
             <li>2024 | <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.109.L220301" target="_blank">A. Deger, A. Lazarides, "Weak ergodicity breaking transition in randomly constrained model", Phys. Rev. B 109, L220301 (Letter)</a></li>
-            <li>2023 | <a href="https://arxiv.org/abs/2312.14058" target="_blank">A. Benhemou, G. Nixon, A. Deger, U. Schneider, and J. Pachos, "Probing quantum properties of black holes with a Floquet-driven optical lattice simulator" arXiv:2312.14058 (Under review in PRL)</a></li>
+            <li>2023 | <a href="https://arxiv.org/abs/2312.14058" target="_blank">A. Benhemou, G. Nixon, A. Deger, U. Schneider, and J. Pachos, "Measuring Hawking temperature in an optical lattice simulator", arXiv:2312.14058 (Under review in PRA)</a></li>
             <li>2023 | <a href="https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.4.040339" target="_blank">A. Deger, A. Daniel, Z. Papic, J. Pachos "Persistent non-Gaussian correlations in out-of-equilibrium Rydberg atom arrays", PRX Quantum 4, 040339</a></li>
             <li>2023 | <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.108.155124" target="_blank">A. Deger, M. Horner, J. Pachos "AdS/CFT Correspondence with a 3D Black Hole Simulator", Phys. Rev. B 108, 155124</a></li>
             <li>2022 | <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.129.190601" target="_blank">A. Deger, A. Lazarides, S. Roy, "Constrained Dynamics and Directed Percolation", Phys. Rev. Lett. 129, 190601 – (Editor’s Suggestion)</a></li>
@@ -228,10 +622,10 @@
             <li>2019 | <a href="https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.1.023004" target="_blank">A. Deger and C. Flindt, "Determination of Universal Critical Exponents Using Lee-Yang Theory", Phys. Rev. Research 1, 023004</a></li>
             <li>2019 | <a href="https://link.springer.com/article/10.1007/s11128-019-2439-7" target="_blank">A. Deger and T-C. Wei, "Geometric entanglement and quantum phase transition in generalized cluster-XY models", Quantum Inf. Process. 18, 326</a></li>
             <li>2018 | <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.97.012115" target="_blank">A. Deger, K. Brandner and C. Flindt, "Lee-Yang Zeros and large-deviation statistics of a molecular zipper", Phys. Rev. E 97, 012115 – (Editor’s Suggestion)</a></li>
-        </ul>
+        </ol>
     </section>
 
-        <section class="software">
+        <section class="software" id="software">
         <h2>Software</h2>
         <div class="software-card">
             <h3><a href="https://deger.xyz/BlueTangle.jl/" target="_blank" rel="noopener">BlueTangle.jl</a></h3>
@@ -248,10 +642,23 @@
             </ul>
             <p><a href="https://github.com/aydindeger/BlueTangle.jl" target="_blank" rel="noopener"><strong>GitHub repository</strong></a> · <a href="https://deger.xyz/BlueTangle.jl/" target="_blank" rel="noopener"><strong>Documentation</strong></a></p>
         </div>
+
+        <div class="software-card">
+            <h3><a href="https://github.com/aydindeger/PhasePoly.jl" target="_blank" rel="noopener">PhasePoly.jl</a></h3>
+            <p>A fast, <em>exact</em> simulator for monomial quantum circuits, based on the phase-polynomial / Gauss-sum method. Highlights include:</p>
+            <ul>
+                <li><strong>Efficient Pauli expectation values</strong>: for circuits with diagonal phase gates up to level 3 (Z, S, T, CZ, CS, CCZ), Pauli expectations reduce to quadratic Gauss sums evaluated in O(n&sup3;) time, without explicit statevector evolution.</li>
+                <li><strong>Level-4 gates</strong> (&radic;T, CT, CCS, CCCZ) handled exactly by branching only over surviving &radic;T terms.</li>
+                <li><strong>Flexible inputs</strong>: essentially any stabilizer/phase input — computational and Pauli basis states, magic states, and entangled inputs such as graph states.</li>
+                <li><strong>Exact, compact representation</strong> of the unitary as an affine map over GF(2) plus a phase polynomial; matches dense statevector simulation to machine precision.</li>
+            </ul>
+            <p><a href="https://github.com/aydindeger/PhasePoly.jl" target="_blank" rel="noopener"><strong>GitHub repository</strong></a></p>
+        </div>
+
     </section>
 
     <footer>
-        &copy; Copyright 2025 Aydin Deger.
+        &copy; Copyright 2026 Aydin Deger.
     </footer>
 </div>
 
